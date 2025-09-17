@@ -1,16 +1,52 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-
   return (
-    <header>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
       <div className="container">
-        <Link to="/">
-          <h1>Workout Buddy</h1>
+        {/* Brand / Logo */}
+        <Link className="navbar-brand fw-bold fs-3" to="/">
+          Workout Buddy
         </Link>
-      </div>
-    </header>
-  )
-}
 
-export default Navbar
+        {/* Toggle button for mobile */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Menu items */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/workout">Workout</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/menu">Menu</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">About</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="btn btn-primary ms-lg-3" to="/signup">
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
